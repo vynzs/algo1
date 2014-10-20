@@ -59,7 +59,7 @@ package body Svg is -- Tracé "à l'envers" pour le moment", tout de Haut gauche v
    
    
    
-   procedure Sauvegarde (Sortie : in String; Objets : in Tableau_Objets, Largeur, Hauteur) is
+   procedure Sauvegarde (Sortie : in String; Objets : in Tableau_Objets; Largeur, Hauteur : in Integer) is
       Mauvais_Rangement : exception;
    begin
 

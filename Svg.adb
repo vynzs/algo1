@@ -19,8 +19,14 @@ package body Svg is -- Tracé "à l'envers" pour le moment", tout de Haut gauche v
    
    Noir : Couleur := (0,0,0);
    Gris : Couleur := (110,110,110);
-
+   Rouge : Couleur := (150,0,0);
+   Bleu : Couleur := (0,0,150);
    
+   Set_Couleurs : array ( Integer range 0..2 , Integer range 0..1 ) of Couleur := ( 0 => ( 0 => Noir, 1 => Gris), 1 => ( 0 => Bleu, 1 => Rouge));
+   X : Integer range Set_Couleurs'Range(1) := Set_Couleurs'First(1);
+   Y : Integer range Set_Couleurs'Range(2) := Set_Couleurs'First(2);
+   -- On change de couleur à chaque objet (indice 1). On change de "set de couleur" à chaque niveau (indice 2)
+   -- Doit partir de 0 pour modulo facile.
    
    procedure Trace_Ligne  (A,B : in Point; Col : in Couleur) is
    begin
@@ -65,13 +71,16 @@ package body Svg is -- Tracé "à l'envers" pour le moment", tout de Haut gauche v
 
       Trace_Ruban (Output, Largeur, Hauteur);
       for I in Objets'Range loop
-	 Trace_Rectangle (Objets(I),Gris);
+	 Trace_Rectangle (Objets(I),Set_Couleurs(X,Y));
+	 X:= (X+1) mod Set_Couleurs'Last(1); -- Couleur prochain objet
 	 
 	 if Objets(I).Niveau <> Objets(I+1).Niveau then -- On s'apprêtre à changer de Niveau
 	    Coord_Act.X := 0;
 	    Coord_Act.Y := Coord_Act.Y + Hauteur_Niveau;
 	    Hauteur_Niveau := Objets(I+1).Hauteur;  -- Hauteur du niveau = Hauteur du 1er objet du Niveau
+	    Y:= (Y+1) mod Set_Couleurs'Last(2); -- Change de set de couleur.
 	 end if;
+	 
 	 if Coord_Act.X > Largeur or Coord_Act.Y > Hauteur then -- Test débordement du Ruban
 	    raise Mauvais_Rangement;
 	 end if;
