@@ -1,0 +1,99 @@
+V "GNAT Lib v4.6"
+P SS ZX
+R nnnnnnnnnnnnnnnnnnvnnvnnnvnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnvnnnnvnnnnnnnnnnnnnnnn
+
+U parseur%b		parseur.adb		bb9fe5c5 NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W objet_packing%s	objet_packing.adb	objet_packing.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+
+U parseur%s		parseur.ads		19cdb384 EE OO PK
+W ada.tags%s		a-tags.adb		a-tags.ali
+W objet_packing%s	objet_packing.adb	objet_packing.ali
+W system%s		system.ads		system.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+D ada.ads		20070406091342 3ffc8e18
+D a-except.ads		20090727140100 0c711ac9
+D a-finali.ads		20090409150019 e5e85fa4
+D a-filico.ads		20090409150019 872dc219
+D a-inteio.ads		20070406091342 f64b89a4
+D a-ioexce.ads		20091130110856 8b9de6cd
+D a-stream.ads		20090409150019 2ca4ee37
+D a-tags.ads		20101021101406 c7695348
+D a-textio.ads		20091028140912 386df5d4
+D a-tiinio.ads		20090409150019 aa04e5d6
+D a-unccon.ads		20070406091342 f9eb8f06
+D interfac.ads		20090409150019 f77d8799
+D i-cstrea.ads		20100622165701 1bd72c32
+D objet_packing.ads	20141021200716 279ddf40
+D parseur.ads		20141021203256 3e506cc4
+D parseur.adb		20141021203231 6c742a31
+D system.ads		20140416172229 23e1f70b
+D s-crtl.ads		20100617122610 ac77b159
+D s-exctab.ads		20090417131547 66e51330
+D s-ficobl.ads		20100909103250 443b9d66
+D s-finimp.ads		20090409150019 46853fe8
+D s-finroo.ads		20090409150019 dbb860c9
+D s-parame.ads		20091130110856 9c5d83fa
+D s-secsta.ads		20090707124243 eea35a36
+D s-soflin.ads		20090729085153 9414c974
+D s-stache.ads		20090417130712 596fc1b4
+D s-stalib.ads		20101021102512 c4241c00
+D s-stoele.ads		20090417130712 facd7d98
+D s-stoele.adb		20100617152355 afc5dc80
+D s-stratt.ads		20100909123135 aedef97e
+D s-traent.ads		20090417130712 5221ee41
+D s-unstyp.ads		20090409150019 6ae15c76
+D s-wchcon.ads		20090417130712 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 16|13r6 13r19 14r5 14r18
+X 5 a-inteio.ads
+18K13*Integer_Text_IO[10|45] 16|13w23 14r22
+X 9 a-textio.ads
+49K13*Text_IO 472e16 16|13w10 14r9
+52P9*File_Type(370R9) 16|19r13
+53n23*In_File{53E9} 16|27r21 46r21
+93U14*Open 16|26s7 45s7
+94p7 File{52P9} 16|26r13 45r13
+95e7 Mode{53E9} 16|27r13 46r13
+96s7 Name{string} 16|28r13 47r13
+99U14*Close 16|33s7 36s10 62s10
+298X4*End_Error 16|35r12 61r12
+X 10 a-tiinio.ads
+50U14*Get 16|30s7[5|18] 32s7[5|18] 48s7[5|18] 49s7[5|18] 52s10[5|18] 53s10[5|18]
+. 54s10[5|18]
+X 14 objet_packing.ads
+1K9*Objet_Packing 37e21 15|1w6 1r25 16|15w6 16r5
+3R9*Objet 35e15 16|42r11
+5A9*Tableau_Objets(3R9)<integer> 15|8r62 16|40r62
+8V13*Nouvel_Objet{3R9} 16|55s15
+19U14*Ajout_Objet 16|56s10
+X 15 parseur.ads
+3K9*Parseur 10l5 10e12 16|18b14 67l5 67t12
+5X4*Erreur_Lecture_Benchmark 16|37r16 63r16
+7U14*Lecture_En_Tete 7>30 7<53 7<68 16|23b14 38l8 38t23
+7s30 Nom_Entree{string} 16|23b30 28r21
+7i53 Nombre_Objets{integer} 16|23b53 30m18 31r17
+7i68 Largeur_Ruban{integer} 16|23b68 32m18
+8U14*Lecture 8>22 8=46 16|40b14 65l8 65t15
+8s22 Nom_Entree{string} 16|40b22 47r21
+8a46 Objets{14|5A9} 16|40b46 51r16 56m22
+X 16 parseur.adb
+19p4 Input{9|52P9} 26m21 30r11 32r11 33m14 36m17 45m21 48r11 49r11 52r14
+. 53r14 54r14 62m17
+20i4 Nb_Obj{integer} 31m7
+21i4 Index{integer}
+21i11 Largeur{integer}
+21i20 Hauteur{integer}
+41i7 Index{integer} 48m17 49m17 52m20 55r28
+41i14 Hauteur{integer} 54m20 55r35
+41i23 Largeur{integer} 53m20 55r44
+42r7 O{14|3R9} 55m10 56r33
+51i11 I{integer} 56r30
+

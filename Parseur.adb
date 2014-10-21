@@ -18,7 +18,6 @@ use Objet_Packing;
 package body Parseur is
    Input :  File_Type; -- Oublie pas Close(Input)
    Nb_Obj : Integer ;
-   Erreur_Lecture_Benchmark : exception;
    Index, Largeur, Hauteur : Integer;
 
    procedure Lecture_En_Tete(Nom_Entree :in String; Nombre_Objets, Largeur_Ruban : out Integer) is
@@ -28,9 +27,9 @@ package body Parseur is
             Mode => In_File,
             Name => Nom_Entree);
 
-      Nombre_Objets := Get(Input);
+      Get(Input, Nombre_Objets);
       Nb_Obj := Nombre_Objets ; -- Stock pour utilisation future
-      Largeur_Ruban := Get(Input);
+      Get(Input, Largeur_Ruban);
       Close (Input);
    exception
       when End_Error =>
@@ -38,7 +37,7 @@ package body Parseur is
          raise Erreur_Lecture_Benchmark;
    end Lecture_En_Tete;
 
-   procedure Lecture(Nom_Entree : in String, Objets : in Tableau_Objet) is -- SQUA UN OBJET ?
+   procedure Lecture(Nom_Entree : in String; Objets : in out Tableau_Objets) is -- SQUA UN OBJET ?
       Index, Hauteur, Largeur : Integer;
       O : Objet;
 
@@ -46,15 +45,15 @@ package body Parseur is
       Open (File => Input,
             Mode => In_File,
             Name => Nom_Entree);
-      Index:=Get(Input); -- On passe les carac globales pour arriver au 1er objet
-      Index:=Get(Input);
+      Get(Input,Index); -- On passe les carac globales pour arriver au 1er objet
+      Get(Input,Index);
 
       for I in Objets'Range loop
-         Index := Get(Input);
-         Largeur := Get(Input);
-         Hauteur := Get(Input);
+         Get(Input,Index);
+         Get(Input,Largeur);
+         Get(Input,Hauteur);
          O := Nouvel_Objet(Index, Hauteur, Largeur);
-         Ajout_Objet(Objets, O, I);
+         Ajout_Objet(Objets, I, O);
          -- AJOUTE EN INDEX L'OBJET
       end loop;
 
@@ -65,6 +64,7 @@ package body Parseur is
 
    end Lecture;
 
+end Parseur;
 
 
 

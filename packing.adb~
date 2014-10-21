@@ -29,7 +29,7 @@ package body Packing is
       -- Niveau_Vide : Boolean := True;
       begin
          Tri_Bulle(T_O);
-	Hr := Hauteur(Objet_De_Tableau(T_O, T_O'First)); -- Init hauteur totale à hauteur du 1er niveau
+	Hr := = Hauteur(Objet_De_Tableau(T_O, T_O'First)); -- Init hauteur totale à hauteur du 1er niveau
          for I in Objets'Range loop
             if Largeur(Objet_De_Tableau(T_O, I)) > Largeur_Ruban then
                raise Objet_Trop_Grand;

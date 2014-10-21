@@ -1,0 +1,86 @@
+V "GNAT Lib v4.6"
+P SS ZX
+R nnnnnnnnnnnnnnnnnnvnnvnnnvnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnnnnvnnnnnnnnnnnnnnnn
+
+U packing%b		packing.adb		69439710 NE OO PK
+W ada%s			ada.ads			ada.ali
+W ada.exceptions%s	a-except.adb		a-except.ali
+W ada.tags%s		a-tags.adb		a-tags.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W objet_packing%s	objet_packing.adb	objet_packing.ali
+W system.soft_links%s	s-soflin.adb		s-soflin.ali
+
+U packing%s		packing.ads		9fa2cec5 EE OO PK KM
+W ada.tags%s		a-tags.adb		a-tags.ali
+W objet_packing%s	objet_packing.adb	objet_packing.ali
+W system%s		system.ads		system.ali
+W system.exception_table%s  s-exctab.adb	s-exctab.ali
+W system.standard_library%s  s-stalib.adb	s-stalib.ali
+
+D ada.ads		20070406091342 3ffc8e18
+D a-except.ads		20090727140100 0c711ac9
+D a-finali.ads		20090409150019 e5e85fa4
+D a-filico.ads		20090409150019 872dc219
+D a-ioexce.ads		20091130110856 8b9de6cd
+D a-stream.ads		20090409150019 2ca4ee37
+D a-tags.ads		20101021101406 c7695348
+D a-textio.ads		20091028140912 386df5d4
+D a-unccon.ads		20070406091342 f9eb8f06
+D interfac.ads		20090409150019 f77d8799
+D i-cstrea.ads		20100622165701 1bd72c32
+D objet_packing.ads	20141021200716 279ddf40
+D packing.ads		20141021200842 b83f1185
+D packing.adb		20141021213413 ce8cac01
+D system.ads		20140416172229 23e1f70b
+D s-crtl.ads		20100617122610 ac77b159
+D s-exctab.ads		20090417131547 66e51330
+D s-ficobl.ads		20100909103250 443b9d66
+D s-finimp.ads		20090409150019 46853fe8
+D s-finroo.ads		20090409150019 dbb860c9
+D s-parame.ads		20091130110856 9c5d83fa
+D s-secsta.ads		20090707124243 eea35a36
+D s-soflin.ads		20090729085153 9414c974
+D s-stache.ads		20090417130712 596fc1b4
+D s-stalib.ads		20101021102512 c4241c00
+D s-stoele.ads		20090417130712 facd7d98
+D s-stoele.adb		20100617152355 afc5dc80
+D s-stratt.ads		20100909123135 aedef97e
+D s-traent.ads		20090417130712 5221ee41
+D s-unstyp.ads		20090409150019 6ae15c76
+D s-wchcon.ads		20090417130712 bfeb2e3d
+X 1 ada.ads
+16K9*Ada 19e8 14|3r6 4r5
+X 8 a-textio.ads
+49K13*Text_IO 472e16 14|3w10 4r9
+264U14*Put_Line 14|63s15
+X 12 objet_packing.ads
+1K9*Objet_Packing 37e21 13|1w6 2r5 14|1w6 2r5
+3R9*Objet 35e15 14|9r14
+5A9*Tableau_Objets(3R9)<integer> 13|9r35 12r57 14|8r36 24r57 25r13
+13V13*Hauteur{integer} 14|13s16 13s50 32s15 53s28
+15V13*Largeur{integer} 14|34s16 45s45 47s72 49s60
+19U14*Ajout_Objet 14|15s16 16s16
+22V13*Objet_De_Tableau{3R9} 14|13s24 13s58 14s24 15s34 32s23 34s24 45s53
+. 47s80 49s68 53s36
+25U14*Place_Objet 14|46s16 52s17
+X 13 packing.ads
+4K9*Packing 16l5 16e12 14|6b14 66l5 66t12
+6X4*Objet_Trop_Grand 14|35r22 62r15
+9U14*Tri_Bulle 9=24 14|8b14 20t7 31s10
+9a24 T{12|5A9} 14|8b25 11r16 11r26 12r19 12r29 13r41 13r75 14r41 15m28 15r51
+. 16m28
+12U14*Next_Fit_Decreasing_Height 12=41 12>73 12<101 14|24b14 64t10
+12a41 Objets{12|5A9} 14|24b41 25r31 33r19 59m10
+12i73 Largeur_Ruban{integer} 14|24b73 28r46 34r52 49r44
+12i101 Hauteur_Ruban{integer} 14|24b101 58m10
+X 14 packing.adb
+9r7 Temp{12|3R9} 14m16 16r38
+11i11 I{integer}
+12i14 J{integer} 13r44 13r78 14r44 15r31 15r54 16r31
+25a7 T_O{12|5A9} 31m20 32r40 32r45 34r41 45r70 46m29 47r97 49r85 52m30 53r53
+. 59r20
+26i7 Hr{integer} 32m9 53m17 53r23 58r27
+27i7 Niveau_Courant{integer} 46r37 50m16 50r34 52r38
+28i7 Largeur_Restante_Courante{integer} 45r16 47m16 47r44 49m16
+33i14 I{integer} 34r46 45r75 46r33 47r102 49r90 52r34 53r58
+
