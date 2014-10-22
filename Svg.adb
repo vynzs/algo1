@@ -68,21 +68,18 @@ package body Svg is -- Tracé "à l'envers" pour le moment", tout de Haut gauche v
    procedure Sauvegarde (Sortie : in String; Objets : in Tableau_Objets; Largeur, Haut : in Integer) is
       Mauvais_Rangement : exception;
    begin
-      
+
       Init(Sortie, Objets,Largeur,Haut);
       Trace_Ruban (Largeur, Haut);
       for I in Objets'Range loop
          Trace_Rectangle (Objets(I),Set_Couleurs(X,Y));
-         X:= (X+1) mod Set_Couleurs'Last(1); -- Couleur prochain objet
+         X:= (X+1) mod (Set_Couleurs'Last(1)+1); -- Couleur prochain objet
 
          if I<Objets'Last and then Niveau(Objet_De_Tableau(Objets, I)) /= Niveau(Objet_De_Tableau(Objets,I+1)) then -- On s'apprêtre à changer de Niveau
-	    Put(Integer'Image( Niveau(Objet_De_Tableau(Objets, I))));
-	    Put(Integer'Image( Niveau(Objet_De_Tableau(Objets, I+1))));
-	    New_Line;
             Coord_Act.X := 0;
             Coord_Act.Y := Coord_Act.Y + Hauteur_Niveau;
             Hauteur_Niveau := Hauteur(Objet_De_Tableau(Objets, I+1));  -- Hauteur du niveau = Hauteur du 1er objet du Niveau suivant
-            Y:= (Y+1) mod Set_Couleurs'Last(2); -- Change de set de couleur.
+            Y:= (Y+1) mod (Set_Couleurs'Last(2)+1); -- Change de set de couleur.
          end if;
 
         -- if Coord_Act.X > Largeur or Coord_Act.Y > Haut then -- Test débordement du Ruban
@@ -90,17 +87,16 @@ package body Svg is -- Tracé "à l'envers" pour le moment", tout de Haut gauche v
         -- end if;
 
       end loop;
-	Put(Integer'Image(Niveau(Objet_De_Tableau(Objets, Objets'Last))));
       Put_Line(Output, "</svg>");
       Close (Output);
-      
+
    exception
       when Mauvais_Rangement =>
-	Put_Line(Output, "</svg>");
-	 Close (Output);
-	 raise Mauvais_Rangement;
-	 
+        Put_Line(Output, "</svg>");
+         Close (Output);
+         raise Mauvais_Rangement;
+
    end Sauvegarde;
-   
-   
+
+
 end Svg;
